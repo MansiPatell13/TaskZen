@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
@@ -32,7 +33,7 @@ const SignIn = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="auth-input pl-10"
+              className="pl-10"
             />
           </div>
         </div>
@@ -46,12 +47,13 @@ const SignIn = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              className="auth-input pl-10 pr-10"
+              className="pl-10 pr-10"
             />
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
               className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 z-10"
+              tabIndex={-1}
             >
               {showPassword ? (
                 <EyeOff className="h-5 w-5" />

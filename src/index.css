@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -87,6 +88,10 @@
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', sans-serif;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+  }
 }
 
 @layer utilities {
@@ -102,7 +107,7 @@
     height: 2px;
     bottom: -2px;
     left: 0;
-    background-color: currentColor;
+    background-color: theme('colors.taskzen.coral');
     transform: scaleX(0);
     transform-origin: bottom right;
     transition: transform 0.3s ease-out;
@@ -114,7 +119,7 @@
   }
 
   .cta-button {
-    @apply relative inline-flex items-center justify-center px-6 py-3 overflow-hidden font-medium transition-all bg-taskzen-purple rounded-md text-white hover:bg-taskzen-purple/90;
+    @apply relative inline-flex items-center justify-center px-6 py-3 overflow-hidden font-medium transition-all bg-taskzen-coral rounded-md text-white hover:bg-taskzen-coral/90;
   }
 
   .cta-button::before {
@@ -156,7 +161,7 @@
   }
 
   .auth-btn-outline {
-    @apply w-full bg-white hover:bg-gray-50 text-gray-700 font-medium py-3 px-4 rounded-lg transition-all duration-300 border border-gray-200 flex items-center justify-center gap-2 shadow-sm hover:shadow-md;
+    @apply w-full bg-white hover:bg-gray-50 text-gray-800 font-medium py-3 px-4 rounded-lg transition-all duration-300 border border-gray-200 flex items-center justify-center gap-2 shadow-sm hover:shadow-md;
   }
 
   .auth-link {
@@ -179,11 +184,22 @@
 
   .auth-container {
     @apply min-h-screen flex items-center justify-center bg-gray-50 px-4 py-12;
-    background-image: radial-gradient(circle at 50% 50%, rgba(255, 111, 97, 0.03) 0%, rgba(255, 111, 97, 0) 60%);
+    background-image: radial-gradient(circle at 50% 50%, rgba(255, 107, 107, 0.03) 0%, rgba(255, 107, 107, 0) 60%);
   }
 
   .fade-in {
     animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .masonry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-auto-rows: 10px;
+    grid-gap: 20px;
+  }
+
+  .masonry-item {
+    @apply rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-all duration-300;
   }
 
   @keyframes fadeIn {
@@ -195,5 +211,17 @@
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card-gradient {
+    background: linear-gradient(120deg, #ffffff 0%, #f8f9fa 100%);
   }
 }

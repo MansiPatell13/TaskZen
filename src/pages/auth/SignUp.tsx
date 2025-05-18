@@ -34,7 +34,7 @@ const SignUp = () => {
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
               required
-              className="auth-input pl-10"
+              className="pl-10"
             />
           </div>
         </div>
@@ -48,7 +48,7 @@ const SignUp = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="auth-input pl-10"
+              className="pl-10"
             />
           </div>
         </div>
@@ -62,13 +62,14 @@ const SignUp = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              className="auth-input pl-10 pr-10"
+              className="pl-10 pr-10"
               minLength={6}
             />
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
               className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 z-10"
+              tabIndex={-1}
             >
               {showPassword ? (
                 <EyeOff className="h-5 w-5" />
